@@ -22,24 +22,24 @@
     // Override point for customization after application launch.
     
     // create object window
-    NSLog(@"=1 RC AppDelegate Window = %lu",(unsigned long)[self.window retainCount]);
-    
     self.window = [[[UIWindow alloc] init] autorelease];
-    
-    NSLog(@"=2 RC AppDelegate Window = %lu",(unsigned long)[self.window retainCount]);
     
     [self.window setFrame:[[UIScreen mainScreen] bounds]];
     [self.window setBackgroundColor:[UIColor brownColor]];
     [self.window makeKeyAndVisible]; //why the error if thereis no viewController??
+    
     MainViewController *mainViewController = [[MainViewController alloc] init];
-    [self.window setRootViewController:mainViewController];    
+    [self.window setRootViewController:mainViewController];
+    [mainViewController release];
     
-    NSLog(@"=3 RC AppDelegate Window = %lu",(unsigned long)[self.window retainCount]);
-    
-//    [self.window release];
-//    NSLog(@"retain count Window = %lu",(unsigned long)[self.window retainCount]);
-
     return YES;
+}
+
+
+- (void)dealloc
+{
+    [_window release];
+    [super dealloc];
 }
 
 
