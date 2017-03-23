@@ -40,11 +40,9 @@
     
     [self.contentView addSubview:lable1];
     self.lableInCell1 = lable1;
-    [lable1 release];
     
     [self.contentView addSubview:lable2];
     self.lableInCell2 = lable2;
-    [lable2 release];
 
 }
 
@@ -60,16 +58,7 @@
     
     [self.contentView addSubview:image];
     self.imageInCell = image;
-    [image release];
 }
 
-
-- (void)dealloc
-{
-    [_lableInCell1 release];
-    [_lableInCell2 release];
-    [_imageInCell release];
-    [super dealloc];
-}
 
 @end

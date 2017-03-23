@@ -8,19 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		1C0874341E76709D008B4951 /* RoomOfHouseList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C0874331E76709D008B4951 /* RoomOfHouseList.plist */; };
+		1C25FDD81E8415F6007CFFE7 /* First.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C25FDD71E8415F6007CFFE7 /* First.storyboard */; };
 		1C6B32511E794C580084CCA8 /* bedroom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C6B324E1E794C580084CCA8 /* bedroom.jpg */; };
 		1C6B32521E794C580084CCA8 /* kitchen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C6B324F1E794C580084CCA8 /* kitchen.jpg */; };
 		1C6B32531E794C580084CCA8 /* livingroom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1C6B32501E794C580084CCA8 /* livingroom.jpg */; };
 		1C97AC4E1E75D25600314EB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C97AC4D1E75D25600314EB5 /* main.m */; };
 		1C97AC511E75D25600314EB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C97AC501E75D25600314EB5 /* AppDelegate.m */; };
 		1C97AC591E75D25600314EB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C97AC581E75D25600314EB5 /* Assets.xcassets */; };
-		1C97AC5C1E75D25600314EB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C97AC5A1E75D25600314EB5 /* LaunchScreen.storyboard */; };
 		1C97AC681E75D6A300314EB5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C97AC671E75D6A300314EB5 /* MainViewController.m */; };
 		1C97AC6E1E771D2E00314EB5 /* TemplateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C97AC6D1E771D2E00314EB5 /* TemplateTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1C0874331E76709D008B4951 /* RoomOfHouseList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RoomOfHouseList.plist; sourceTree = "<group>"; };
+		1C25FDD71E8415F6007CFFE7 /* First.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = First.storyboard; sourceTree = "<group>"; };
 		1C6B324E1E794C580084CCA8 /* bedroom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bedroom.jpg; sourceTree = "<group>"; };
 		1C6B324F1E794C580084CCA8 /* kitchen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kitchen.jpg; sourceTree = "<group>"; };
 		1C6B32501E794C580084CCA8 /* livingroom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = livingroom.jpg; sourceTree = "<group>"; };
@@ -29,7 +30,6 @@
 		1C97AC4F1E75D25600314EB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1C97AC501E75D25600314EB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1C97AC581E75D25600314EB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1C97AC5B1E75D25600314EB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C97AC5D1E75D25600314EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C97AC661E75D6A300314EB5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
 		1C97AC671E75D6A300314EB5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
@@ -61,6 +61,7 @@
 			children = (
 				1C97AC6C1E771D2E00314EB5 /* TemplateTableViewCell.h */,
 				1C97AC6D1E771D2E00314EB5 /* TemplateTableViewCell.m */,
+				1C25FDD71E8415F6007CFFE7 /* First.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -100,7 +101,6 @@
 				1C0874311E766FC7008B4951 /* View */,
 				1C0874301E766FC0008B4951 /* Model */,
 				1C97AC581E75D25600314EB5 /* Assets.xcassets */,
-				1C97AC5A1E75D25600314EB5 /* LaunchScreen.storyboard */,
 				1C97AC5D1E75D25600314EB5 /* Info.plist */,
 				1C97AC4C1E75D25600314EB5 /* Supporting Files */,
 			);
@@ -185,10 +185,10 @@
 			files = (
 				1C0874341E76709D008B4951 /* RoomOfHouseList.plist in Resources */,
 				1C6B32511E794C580084CCA8 /* bedroom.jpg in Resources */,
-				1C97AC5C1E75D25600314EB5 /* LaunchScreen.storyboard in Resources */,
 				1C6B32531E794C580084CCA8 /* livingroom.jpg in Resources */,
 				1C97AC591E75D25600314EB5 /* Assets.xcassets in Resources */,
 				1C6B32521E794C580084CCA8 /* kitchen.jpg in Resources */,
+				1C25FDD81E8415F6007CFFE7 /* First.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,17 +208,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		1C97AC5A1E75D25600314EB5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1C97AC5B1E75D25600314EB5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		1C97AC5E1E75D25600314EB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -228,7 +217,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -275,7 +264,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -316,6 +305,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.TableOfIntThings;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -327,6 +317,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = no.TableOfIntThings;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

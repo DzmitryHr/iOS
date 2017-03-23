@@ -21,26 +21,11 @@
     
     // Override point for customization after application launch.
     
-    // create object window
-    self.window = [[[UIWindow alloc] init] autorelease];
-    
-    [self.window setFrame:[[UIScreen mainScreen] bounds]];
-    [self.window setBackgroundColor:[UIColor brownColor]];
-    [self.window makeKeyAndVisible]; //why the error if thereis no viewController??
-    
-    MainViewController *mainViewController = [[MainViewController alloc] init];
-    [self.window setRootViewController:mainViewController];
-    [mainViewController release];
-    
+    //?    MainViewController *mainViewController = [[MainViewController alloc] init];
+
     return YES;
 }
 
-
-- (void)dealloc
-{
-    [_window release];
-    [super dealloc];
-}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

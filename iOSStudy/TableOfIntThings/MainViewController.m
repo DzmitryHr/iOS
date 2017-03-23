@@ -20,13 +20,14 @@
     NSArray *arrayOfRoomHouse; // describe the number of rooms
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     // Do any additional setup after loading the view.
     
-    // create object ViewController
+/*    // create object ViewController
     UITableView *tableViewOfIntThings = [[UITableView alloc] initWithFrame:
                                          [[UIScreen mainScreen] bounds] style:
                                          UITableViewStylePlain];
@@ -41,13 +42,12 @@
                  forCellReuseIdentifier:@"CELL_Identifier"];
 
     [self.view addSubview:tableViewOfIntThings];
-
+*/
     // load data  from *.plist
     NSString *path = [[NSBundle mainBundle] pathForResource:@"RoomOfHouseList"
                                                      ofType:@"plist"];
     arrayOfRoomHouse = [[NSArray alloc] initWithContentsOfFile:path];
     
-    [tableViewOfIntThings release];
 }
 
 
@@ -60,7 +60,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TemplateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL_Identifier" forIndexPath:indexPath];
+/*    TemplateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL_Identifier" forIndexPath:indexPath];
     
     // cell padding
     cell.lableInCell1.text = [[arrayOfRoomHouse objectAtIndex:indexPath.row]
@@ -70,6 +70,8 @@
     cell.imageInCell.image = [UIImage imageNamed:
                               [[arrayOfRoomHouse objectAtIndex:indexPath.row]
                                objectForKey:@"imageName" ]];
+*/
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL_ID" forIndexPath:indexPath];
     
     return cell;
 }
