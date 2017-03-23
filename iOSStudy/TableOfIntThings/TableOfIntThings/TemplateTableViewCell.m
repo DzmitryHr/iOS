@@ -11,7 +11,7 @@
 
 @implementation TemplateTableViewCell
 
-
+/*
 -(instancetype)initWithStyle:(UITableViewCellStyle)style
              reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -59,6 +59,6 @@
     [self.contentView addSubview:image];
     self.imageInCell = image;
 }
-
+*/
 
 @end

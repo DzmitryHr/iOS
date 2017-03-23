@@ -71,8 +71,15 @@
                               [[arrayOfRoomHouse objectAtIndex:indexPath.row]
                                objectForKey:@"imageName" ]];
 */
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL_ID" forIndexPath:indexPath];
+
     
+    TemplateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL_ID" forIndexPath:indexPath];
+    
+    cell.title.text = [[arrayOfRoomHouse objectAtIndex:indexPath.row]
+                       objectForKey:@"title"];
+    cell.subtitle.text = [[ arrayOfRoomHouse objectAtIndex:indexPath.row]
+                          objectForKey:@"subtitle"];
+    cell.image.image = [UIImage imageNamed: [[arrayOfRoomHouse objectAtIndex:indexPath.row] objectForKey:@"imageName"]];
     return cell;
 }
 
