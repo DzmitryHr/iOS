@@ -44,6 +44,13 @@
 }
 
 
+/*- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    tableView.estimatedRowHeight = 80.0f;
+    tableView.rowHeight = UITableViewAutomaticDimension;
+    return 80;
+}
+*/
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -58,6 +65,10 @@
     
     i++;
     NSLog(@"method tableViewcell for row at ... %i",i);
+    
+    tableView.estimatedRowHeight = 120.0f;
+    tableView.rowHeight = UITableViewAutomaticDimension;
+    
     
     return cell;
 }

@@ -4,25 +4,25 @@
 <array>
 	<dict>
 		<key>title</key>
-		<string>Think</string>
+		<string>Living  Room</string>
 		<key>subtitle</key>
-		<string>living Room</string>
+		<string>Think: it is big room whith many items, and other)</string>
 		<key>imageName</key>
 		<string>livingroom.jpg</string>
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Eat</string>
+		<string>Kitchen</string>
 		<key>subtitle</key>
-		<string>kitchen</string>
+		<string>Eat: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</string>
 		<key>imageName</key>
 		<string>kitchen.jpg</string>
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Sleep</string>
+		<string>Bedroom: yyyyyyyyyyyyyyyyy</string>
 		<key>subtitle</key>
-		<string>bedroom</string>
+		<string>Sleep </string>
 		<key>imageName</key>
 		<string>bedroom.jpg</string>
 	</dict>
