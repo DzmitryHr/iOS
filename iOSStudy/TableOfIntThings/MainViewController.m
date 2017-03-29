@@ -14,6 +14,9 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableViewOfThings;
 
+@property (strong, nonatomic) NSURLSession *session;
+@property (strong, nonatomic) NSURL *url;
+
 @end
 
 
@@ -28,13 +31,17 @@
 {
     [super viewDidLoad];
     
-    // Do any additional setup after loading the view.
+// load data  from *.plist
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"RoomOfHouseList"
+//                                                     ofType:@"plist"];
+//    arrayOfRoomHouse = [[NSArray alloc] initWithContentsOfFile:path];
+
+    self.tableViewOfThings.estimatedRowHeight = 120.0f;
+    self.tableViewOfThings.rowHeight = UITableViewAutomaticDimension;
     
-    // load data  from *.plist
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"RoomOfHouseList"
-                                                     ofType:@"plist"];
-    arrayOfRoomHouse = [[NSArray alloc] initWithContentsOfFile:path];
-    
+    NSURLSessionConfiguration *sessionCongiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    self.session = [NSURLSession sessionWithConfiguration:sessionCongiguration];
+    self.url = [NSURL URLWithString:@"https://raw.githubusercontent.com/DzmitryHr/iOS/Sprint2Storyboard/iOSStudy/TableOfIntThings/TableOfIntThings/RoomOfHouseList.plist"];
 }
 
 
@@ -44,16 +51,7 @@
 }
 
 
-/*- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    tableView.estimatedRowHeight = 80.0f;
-    tableView.rowHeight = UITableViewAutomaticDimension;
-    return 80;
-}
-*/
-
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {   
     TemplateTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL_ID" forIndexPath:indexPath];
     
@@ -63,18 +61,31 @@
                           objectForKey:@"subtitle"];
     cell.image.image = [UIImage imageNamed: [[arrayOfRoomHouse objectAtIndex:indexPath.row] objectForKey:@"imageName"]];
     
-    i++;
-    NSLog(@"method tableViewcell for row at ... %i",i);
-    
-    tableView.estimatedRowHeight = 120.0f;
-    tableView.rowHeight = UITableViewAutomaticDimension;
-    
-    
     return cell;
 }
 
-- (IBAction)LoadButton:(UIButton *)sender {
-    NSLog(@"button is put");
+- (IBAction)loadButton:(UIButton *)sender {
+    
+    NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:self.url completionHandler:^(NSData * data, NSURLResponse * response, NSError *error) {
+                                                
+                                                //  not in the main queu
+                                                NSError *err;
+                                                NSArray *plist = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListImmutable format:nil error:&err];
+//                                                NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data                                                                                                     options:0 error:nil];
+                                                NSLog(@"%@", plist);
+                                                NSLog(@"other queue");
+                                                
+                                                dispatch_async(dispatch_get_main_queue(), ^{
+                                                    arrayOfRoomHouse = plist;
+                                                    [self.tableViewOfThings reloadData];
+                                                    // in main quene
+                                                    NSLog(@"main queue");
+                                                    
+                                                    
+                                                });
+                                            }];
+    [dataTask resume];
+    
     [self.tableViewOfThings reloadData];
     
 }

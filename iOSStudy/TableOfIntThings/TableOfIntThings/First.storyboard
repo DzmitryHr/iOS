@@ -6,8 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Self referencing constraints of the same attribute" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,9 +24,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="127" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cO3-JX-hsP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="127" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cO3-JX-hsP">
                                 <rect key="frame" x="16" y="20" width="288" height="461"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CELL_ID" rowHeight="127" id="I1B-zo-duO" customClass="TemplateTableViewCell">
@@ -36,20 +36,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HJ-3P-PBQ">
-                                                    <rect key="frame" x="16" y="8" width="169" height="111"/>
+                                                    <rect key="frame" x="16" y="8" width="95" height="111.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="30" verticalCompressionResistancePriority="30" translatesAutoresizingMaskIntoConstraints="NO" id="gdI-Ix-1vb">
-                                                    <rect key="frame" x="205" y="8" width="70" height="70"/>
+                                                    <rect key="frame" x="131" y="8" width="144" height="81"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="70" id="uBN-Tm-wiM"/>
-                                                        <constraint firstAttribute="width" secondItem="gdI-Ix-1vb" secondAttribute="height" multiplier="1:1" id="vpz-aA-2VA"/>
+                                                        <constraint firstAttribute="height" secondItem="gdI-Ix-1vb" secondAttribute="height" multiplier="1:1" id="vpz-aA-2VA"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUM-jo-NIH">
-                                                    <rect key="frame" x="205" y="80" width="70" height="31"/>
+                                                    <rect key="frame" x="131" y="91" width="144" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -57,6 +56,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="wUM-jo-NIH" secondAttribute="bottom" constant="7" id="2Vo-zX-Jm8"/>
+                                                <constraint firstItem="gdI-Ix-1vb" firstAttribute="width" secondItem="ZcY-af-HwI" secondAttribute="width" multiplier="0.5" id="33M-JW-BSH"/>
                                                 <constraint firstItem="gdI-Ix-1vb" firstAttribute="top" secondItem="ZcY-af-HwI" secondAttribute="topMargin" id="MZm-SB-XqT"/>
                                                 <constraint firstItem="wUM-jo-NIH" firstAttribute="top" secondItem="gdI-Ix-1vb" secondAttribute="bottom" constant="2" id="VwQ-3d-Xr5"/>
                                                 <constraint firstItem="5HJ-3P-PBQ" firstAttribute="top" secondItem="ZcY-af-HwI" secondAttribute="top" constant="8" id="b3Z-Fs-IyG"/>
@@ -86,15 +86,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Load"/>
                                 <connections>
-                                    <action selector="LoadButton:" destination="tcH-d5-y5F" eventType="touchUpInside" id="IIC-iU-83j"/>
+                                    <action selector="loadButton:" destination="tcH-d5-y5F" eventType="touchUpInside" id="ihy-W7-AGo"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="cO3-JX-hsP" firstAttribute="top" secondItem="KgZ-0G-mlT" secondAttribute="bottom" id="P8x-nn-EHd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="H7g-JO-TEN" secondAttribute="trailing" constant="121" id="cyA-Ia-1QN"/>
                             <constraint firstItem="mKH-si-lcu" firstAttribute="top" secondItem="H7g-JO-TEN" secondAttribute="bottom" constant="8" id="eFe-ri-Ldk"/>
                             <constraint firstItem="H7g-JO-TEN" firstAttribute="leading" secondItem="NST-CR-hf5" secondAttribute="leadingMargin" constant="121" id="fwq-pA-6VJ"/>
+                            <constraint firstItem="cO3-JX-hsP" firstAttribute="leading" secondItem="NST-CR-hf5" secondAttribute="leadingMargin" id="lZs-ZN-wV7"/>
+                            <constraint firstItem="cO3-JX-hsP" firstAttribute="trailing" secondItem="NST-CR-hf5" secondAttribute="trailingMargin" id="oeT-MX-DW9"/>
+                            <constraint firstItem="H7g-JO-TEN" firstAttribute="top" secondItem="cO3-JX-hsP" secondAttribute="bottom" constant="43" id="yg6-KN-uo0"/>
                         </constraints>
                     </view>
                     <connections>
